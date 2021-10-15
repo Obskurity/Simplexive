@@ -18,7 +18,7 @@ bot.remove_command("help")
 
 @bot.event
 async def on_ready():
-  print("Initiallized Database.......")
+  print("Initialized Database.......")
   print('Running as {0.user}'.format(bot))
   await bot.change_presence(activity = discord.Game(name = "!help for more about me."))
   
