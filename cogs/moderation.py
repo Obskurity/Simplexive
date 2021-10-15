@@ -1,12 +1,27 @@
 import discord
 from discord.ext import commands
 
+import discord
+from discord.ext import commands 
+import os
+import json
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+
+
+
 class Moderation(commands.Cog, description = "Responsible for the moderation of servers."):
   """
   Module Responsible for the moderation of servers.
   """
   def __init__(self, bot):
     self.bot = bot
+
+  #cred = credentials.Certificate(json.loads(os.environ['FIREBASE']))
+  #firebase_admin.initialize_app(cred)
+
+  #db = firestore.client()
     
   @commands.command(description = "Kicks members from the server.\n`!kick [member] [reason]`")
   @commands.has_permissions(kick_members = True)  

@@ -1,9 +1,16 @@
 import discord
 from discord.ext import commands 
 import os
-import pymongo
-from pymongo import MongoClient
+import json
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+from keep_running import keep_alive
 
+cred = credentials.Certificate(json.loads(os.environ['FIREBASE']))
+firebase_admin.initialize_app(cred)
+
+db = firestore.client()
 
 #bot = discord.Client()
 bot = commands.Bot(command_prefix = "!")
@@ -11,8 +18,6 @@ bot.remove_command("help")
 
 @bot.event
 async def on_ready():
-  client = MongoClient(str(os.environ['HOSTNAME'])
-  db = client.db_name
   print("Initiallized Database.......")
   print('Running as {0.user}'.format(bot))
   await bot.change_presence(activity = discord.Game(name = "!help for more about me."))
@@ -40,6 +45,6 @@ for filename in os.listdir('./cogs'):
 
 
 
-
+keep_alive()
 bot.run(os.environ['TOKEN'])
 
