@@ -1,5 +1,5 @@
 # Simplexive
-Personalized all discord bot.
+Personalized all-purpose discord bot.
 
 Features:
  - The bot can retrieve information from the server, and information about users.
