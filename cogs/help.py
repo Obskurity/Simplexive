@@ -51,11 +51,11 @@ class Help(commands.Cog, description = 'Cog responsible for helping out users.')
           break
         # if input not found
       else:
-        helpCommandEmbed = discord.Embed(title = f"{input[0]} is nota  cateogry.", description = "Please request a category instead.", colour = 0x33ff86)
+        helpCommandEmbed = discord.Embed(title = f"{input[0]} is not a  cateogry.", description = "Please request a category instead.", colour = 0x33ff86)
 
     # when someone passed in more than one category(i.e, argument)
     elif len(input) > 1:
-      helpCommandEmbed = discord.Embed(description = "Please request only one category at a time :smiley:", colour = 0x33ff86)
+      helpCommandEmbed = discord.Embed(description = "Please request only one category at a time. :smiley:", colour = 0x33ff86)
 
     else:
       return
