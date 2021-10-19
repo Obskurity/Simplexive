@@ -50,18 +50,15 @@ class Help(commands.Cog, description = 'Cog responsible for helping out users.')
           # found cog - breaking loop
           break
         # if input not found
-        # yes, for-loops have an else statement, it's called when no 'break' was issued
       else:
-        helpCommandEmbed = discord.Embed(title = "What's that?!", description = f"I've never heard from a category called *{input[0]}* before :scream:", colour = 0x33ff86)
+        helpCommandEmbed = discord.Embed(title = f"{input[0]} is nota  cateogry.", description = "Please request a category instead.", colour = 0x33ff86)
 
-    # too many cogs requested - only one at a time allowed
+    # when someone passed in more than one category(i.e, argument)
     elif len(input) > 1:
-      helpCommandEmbed = discord.Embed(title = "That's too much.", description = "Please request only one module at once :sweat_smile:", colour = 0x33ff86)
+      helpCommandEmbed = discord.Embed(description = "Please request only one category at a time :smiley:", colour = 0x33ff86)
 
     else:
-      helpCommandEmbed = discord.Embed(title = "It's a magical place.", description = "I don't know how you got here. But I didn't see this coming at all.\n"
-      "Would you please be so kind to report that issue to me on github?\n"
-      "https://github.com/nonchris/discord-fury/issues\n" "Thank you! ~Chris", colour = 0x33ff86)
+      return
 
     await ctx.send(embed = helpCommandEmbed)
 
