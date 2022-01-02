@@ -40,7 +40,7 @@ class Logs(commands.Cog):
   @commands.Cog.listener()
   async def on_message_delete(self, message):
     if not message.author.bot:
-      desc = "*Message Deleted By*: " + "**" + message.author.name + "#" + message.author.discriminator + "**\n" + "User ID: " + str(message.author.id)
+      desc = "*Message Deleted By*: " + "**" + message.author.name + "#" + message.author.discriminator + "**\n" + "User ID: " + str(message.author.id) + "\nMessage Deleted In: " + "#" + message.channel.name
       embed = discord.Embed(title = "Deleted Message", description = desc ,colour = 0x33ff86, timestamp = datetime.utcnow())
       embed.set_thumbnail(url = message.author.avatar_url)
 
